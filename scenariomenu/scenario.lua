@@ -1,6 +1,8 @@
 local looped = 0
 local looped2 = 1
 
+
+
 local scens = {
     {scen = "WORLD_HUMAN_AA_COFFEE", label = "Coffee"},
     {scen = "WORLD_HUMAN_AA_SMOKE", label = "Smoke"},
@@ -70,15 +72,16 @@ local scens = {
 Citizen.CreateThread(function()
     local checkbox2 = false
 
-    WarMenu.CreateMenu('list', ""..name.."")
-    WarMenu.SetSubTitle('list', 'Scenario Menu')
-    WarMenu.CreateSubMenu('gesture', 'list', 'Gestures')
+    local ped = GetPlayerPed(-1)
+
+    WarMenu.CreateMenu('list', "Tea\'s Scenarios")
+    WarMenu.SetSubTitle('list', 'Options')
     WarMenu.CreateSubMenu('scens', 'list', 'Scenarios')
     WarMenu.CreateSubMenu('creds', 'list', 'Credits')
-    local name = GetPlayerName(PlayerId())
-    ped = GetPlayerPed(-1)
+
 
     while true do
+
 
         if checkbox2 then
             looped2 = 1
@@ -91,6 +94,7 @@ Citizen.CreateThread(function()
             if WarMenu.MenuButton('Scenarios', 'scens') then
             end
 
+
             if WarMenu.MenuButton('Credits', 'creds') then
             end
 
@@ -101,6 +105,7 @@ Citizen.CreateThread(function()
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
                 ClearPedTasksImmediately(ped)
+            elseif WarMenu.MenuButton('Jobs', 'job') then
             end
             for theId,theItems in pairs(scens) do
                 if WarMenu.Button(theItems.label) then
