@@ -71,9 +71,7 @@ local scens = {
 -- {scen = "", label = ""},
 Citizen.CreateThread(function()
     local checkbox2 = false
-
-    local ped = GetPlayerPed(-1)
-
+        
     WarMenu.CreateMenu('list', "Tea\'s Scenarios")
     WarMenu.SetSubTitle('list', 'Options')
     WarMenu.CreateSubMenu('scens', 'list', 'Scenarios')
@@ -81,7 +79,8 @@ Citizen.CreateThread(function()
 
 
     while true do
-
+            
+        local ped = GetPlayerPed(-1)
 
         if checkbox2 then
             looped2 = 1
