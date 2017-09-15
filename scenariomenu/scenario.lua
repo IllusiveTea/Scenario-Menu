@@ -89,7 +89,7 @@ local scens = {
 -- {scen = "", label = "", category = ""},
 Citizen.CreateThread(function()
     local checkbox2 = false
-    WarMenu.CreateMenu('list', "Tea\'s Scenarios")
+    WarMenu.CreateMenu('list', "Simple Scenarios")
     WarMenu.SetSubTitle('list', 'Scenario Menu V1.2!')
     WarMenu.CreateSubMenu('job', 'list', 'Jobs')
     WarMenu.CreateSubMenu('hobby', 'list', 'Hobbies')
