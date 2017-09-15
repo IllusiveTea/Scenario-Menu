@@ -70,12 +70,13 @@ local scens = {
 Citizen.CreateThread(function()
     local checkbox2 = false
 
+	
+	local name = GetPlayerName(PlayerId())
     WarMenu.CreateMenu('list', ""..name.."")
     WarMenu.SetSubTitle('list', 'Scenario Menu')
     WarMenu.CreateSubMenu('gesture', 'list', 'Gestures')
     WarMenu.CreateSubMenu('scens', 'list', 'Scenarios')
     WarMenu.CreateSubMenu('creds', 'list', 'Credits')
-    local name = GetPlayerName(PlayerId())
     ped = GetPlayerPed(-1)
 
     while true do
