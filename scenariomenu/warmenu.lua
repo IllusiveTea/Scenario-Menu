@@ -191,7 +191,7 @@ function WarMenu.CreateMenu(id, title)
     menus[id].currentOption = 1
     menus[id].maxOptionCount = 15
 
-    menus[id].titleFont = 7
+    menus[id].titleFont = 1
     menus[id].titleColor = { r = 0, g = 0, b = 0, a = 255 }
     menus[id].titleBackgroundColor = { r = 0, g = 133, b = 199, a = 255 }
 
