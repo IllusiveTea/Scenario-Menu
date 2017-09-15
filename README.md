@@ -1,4 +1,4 @@
-## UPDATE 1: FIXED ERROR WHERE MENU WOULD STOP WORKING AFTER CHANGING PEDS!
+## V1.1 Small update pushed to fix the menu stopping working after changing peds
 
 
 
