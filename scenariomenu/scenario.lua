@@ -90,7 +90,7 @@ local scens = {
 Citizen.CreateThread(function()
     local checkbox2 = false
     WarMenu.CreateMenu('list', "Simple Scenarios")
-    WarMenu.SetSubTitle('list', 'Scenario Menu V1.2!')
+    WarMenu.SetSubTitle('list', 'Simple Scenarios V1.2!')
     WarMenu.CreateSubMenu('job', 'list', 'Jobs')
     WarMenu.CreateSubMenu('hobby', 'list', 'Hobbies')
     WarMenu.CreateSubMenu('drink', 'list', 'Drinking & Drugs')
