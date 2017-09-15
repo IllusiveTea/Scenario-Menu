@@ -1,4 +1,4 @@
-## V1.1 Small update pushed to fix the menu stopping working after changing peds
+## V1.1: Small update pushed to fix the menu stopping working after changing peds
 
 
 
