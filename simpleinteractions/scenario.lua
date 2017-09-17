@@ -4,7 +4,7 @@ local looped2 = 16
 Citizen.CreateThread(function()
     local checkbox2 = false
     WarMenu.CreateMenu('list', "Simple Interactions")
-    WarMenu.SetSubTitle('list', 'Simple Interactions V1.2!')
+    WarMenu.SetSubTitle('list', 'Simple Interactions V1.4!')
     WarMenu.CreateSubMenu('anims', 'list', 'Animations (WIP)')
     WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
     WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
