@@ -174,8 +174,6 @@ Citizen.CreateThread(function()
                 TriggerEvent("chatMessage", "IllusiveTea", {255, 0, 0}, "Warmenu Is Amazing!")
             elseif WarMenu.Button('Menu By:~h~ IllusiveTea') then
             elseif WarMenu.Button('~h~~r~NOTE: THIS IS A WORK IN PROGRESS!') then
-            elseif WarMenu.Button('~h~~r~ANIMATIONS AND CATAGORIES') then
-            elseif WarMenu.Button('~h~~r~WILL BE ADDED VERY SOON!') then
             end
 
             WarMenu.Display()
