@@ -1,5 +1,27 @@
 
 
+anims = {
+    {dic = "gestures@f@standing@casual", anim = "gesture_bring_it_on", label = "Bring It On", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_bye_hard", label = "Bye", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_come_here_hard", label = "Come Here", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_damn", label = "Damn", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_displeased", label = "Displeased", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_easy_now", label = "Easy Now", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_head_no", label = "No", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_nod_yes_hard", label = "Yes", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_hello", label = "Hello", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_me", label = "Me", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_no_way", label = "No Way", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_pleased", label = "Pleased", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_point", label = "Point", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_shrug_hard", label = "Shrug", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_what_hard", label = "What", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_why", label = "Why", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "gesture_you_hard", label = "You", category = "Gesture"},
+    {dic = "gestures@f@standing@casual", anim = "getsure_its_mine", label = "It's Mine", category = "Gesture"},
+}
+--{dic = "", anim = "", label = "", category = ""},
+
 -- {scen = "", label = "", category = ""},
 scens = {
     {scen = "WORLD_HUMAN_CAR_PARK_ATTENDANT", label = "Car Park Attendant", category = "Jobs"},

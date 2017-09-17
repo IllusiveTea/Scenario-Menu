@@ -1,9 +1,13 @@
-local looped2 = 1
+local looped = 8
+local looped2 = 16
 
 Citizen.CreateThread(function()
     local checkbox2 = false
     WarMenu.CreateMenu('list', "Simple Interactions")
     WarMenu.SetSubTitle('list', 'Simple Interactions V1.2!')
+    WarMenu.CreateSubMenu('anims', 'list', 'Animations (WIP)')
+    WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
+    WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
     WarMenu.CreateSubMenu('scens', 'list', 'Scenarios')
     WarMenu.CreateSubMenu('job', 'scens', 'Jobs')
     WarMenu.CreateSubMenu('hobby', 'scens', 'Hobbies')
@@ -12,11 +16,19 @@ Citizen.CreateThread(function()
     WarMenu.CreateSubMenu('misc', 'scens', 'Misc')
     WarMenu.CreateSubMenu('creds', 'scens', 'Credits')
 
+    for theId,theItems in pairs(anims) do
+        RequestAnimDict(theItems.dic)
+    end
 
     while true do
 
         local ped = GetPlayerPed(-1)
 
+        if checkbox then
+            looped = 1
+        else
+            looped = 16
+        end
 
         if checkbox2 then
             looped2 = 1
@@ -26,6 +38,9 @@ Citizen.CreateThread(function()
 
         if WarMenu.IsMenuOpened('list') then
 
+            if WarMenu.MenuButton('Animations (WIP)', 'anims') then
+            end
+
             if WarMenu.MenuButton('Scenarios', 'scens') then
             end
 
@@ -33,7 +48,31 @@ Citizen.CreateThread(function()
             if WarMenu.MenuButton('Credits', 'creds') then
             end
 
+            WarMenu.Display()
+        elseif WarMenu.IsMenuOpened('anims') then
+            if WarMenu.CheckBox('Loop Animations', checkbox, function(checked)
+                    checkbox = checked
+                end) then
+            elseif WarMenu.Button('~r~~h~Stop Animation') then
+                ClearPedTasksImmediately(ped)
+            elseif WarMenu.MenuButton('Gestures', 'gesture') then
+            end
 
+            WarMenu.Display()
+        elseif WarMenu.IsMenuOpened('gesture') then
+            if WarMenu.CheckBox('Loop Animations', checkbox, function(checked)
+                    checkbox = checked
+                end) then
+            elseif WarMenu.Button('~r~~h~Stop Animation') then
+                ClearPedTasksImmediately(ped)
+            end
+            for theId,theItems in pairs(anims) do
+                if theItems.category == "Gesture" then
+                    if WarMenu.Button(theItems.label) then
+                        TaskPlayAnim(ped, theItems.dic, theItems.anim, 8.0, -1, -1, looped, 1, 0, 0, 0)
+                    end
+                end
+            end
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('scens') then
