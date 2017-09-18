@@ -14,7 +14,7 @@ Citizen.CreateThread(function()
     WarMenu.CreateSubMenu('drink', 'scens', 'Drinking & Drugs')
     WarMenu.CreateSubMenu('sat', 'scens', 'Sat Down Animations')
     WarMenu.CreateSubMenu('misc', 'scens', 'Misc')
-    WarMenu.CreateSubMenu('creds', 'scens', 'Credits')
+    WarMenu.CreateSubMenu('creds', 'list', 'Credits')
 
     for theId,theItems in pairs(anims) do
         RequestAnimDict(theItems.dic)
