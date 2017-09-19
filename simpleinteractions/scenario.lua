@@ -7,12 +7,12 @@ Citizen.CreateThread(function()
     WarMenu.SetSubTitle('list', 'Simple Interactions V1.4!')
     WarMenu.CreateSubMenu('anims', 'list', 'Animations (WIP)')
     WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
-    WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
     WarMenu.CreateSubMenu('scens', 'list', 'Scenarios')
     WarMenu.CreateSubMenu('job', 'scens', 'Jobs')
     WarMenu.CreateSubMenu('hobby', 'scens', 'Hobbies')
     WarMenu.CreateSubMenu('drink', 'scens', 'Drinking & Drugs')
-    WarMenu.CreateSubMenu('sat', 'scens', 'Sat Down Animations')
+    WarMenu.CreateSubMenu('ems', 'scens', 'EMS Scenarios')
+    WarMenu.CreateSubMenu('sat', 'scens', 'Sat Down Scenarios')
     WarMenu.CreateSubMenu('misc', 'scens', 'Misc')
     WarMenu.CreateSubMenu('creds', 'list', 'Credits')
 
@@ -84,6 +84,7 @@ Citizen.CreateThread(function()
             elseif WarMenu.MenuButton('Jobs', 'job') then
             elseif WarMenu.MenuButton('Hobbies', 'hobby') then
             elseif WarMenu.MenuButton('Drinks + Drugs', 'drink') then
+            elseif WarMenu.MenuButton('EMS Animations', 'ems') then
             elseif WarMenu.MenuButton('Sitting Scenarios', 'sat') then
             elseif WarMenu.MenuButton('Misc', 'misc') then
             end
@@ -130,6 +131,22 @@ Citizen.CreateThread(function()
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "Drink" then
+                    if WarMenu.Button(theItems.label) then
+                    TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    end
+                end
+            end
+
+            WarMenu.Display()
+        elseif WarMenu.IsMenuOpened('ems') then
+            if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
+                    checkbox2 = checked2
+                end) then
+            elseif WarMenu.Button('~r~~h~Stop Scenario') then
+                ClearPedTasksImmediately(ped)
+            end
+            for theId,theItems in pairs(scens) do
+                if theItems.category == "EMS" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
                     end

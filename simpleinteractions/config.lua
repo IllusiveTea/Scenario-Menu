@@ -106,4 +106,10 @@ scens = {
     {scen = "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS_PRISON", label = "Bench Press (Prison)", category = "Sat"},
     {scen = "PROP_HUMAN_SEAT_SEWING", label = "Sewing", category = "Sat"},
     {scen = "PROP_HUMAN_SEAT_SUNLOUNGER", label = "Sunlounger", category = "Sat"},
+    {scen = "CODE_HUMAN_POLICE_INVESTIGATE", label = "Police Investigate", category = "EMS"},
+    {scen = "CODE_HUMAN_POLICE_CROWD_CONTROL", label = "Crowd Control", category = "EMS"},
+    {scen = "CODE_HUMAN_MEDIC_TIME_OF_DEATH", label = "Medic Time Of Death", category = "EMS"},
+    {scen = "CODE_HUMAN_MEDIC_TEND_TO_DEAD", label = "Tend To Dead", category = "EMS"},
+    {scen = "CODE_HUMAN_MEDIC_KNEEL", label = "Medic Kneel", category = "EMS"},
 }
+--{scen = "", label = "", category = "EMS"},
