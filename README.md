@@ -1,4 +1,4 @@
-## Update V1.5 Added: Final update, Unless I come back to it possibly, but most unlikely.
+## Update V1.5 Added: A few more scenarios. Final update, Unless I come back to it possibly, but most unlikely.
 
 
 ### • Built off of @Warxander's [WarMenu GUI Framework](https://forum.fivem.net/t/release-0-9-7-warmenu-lua-gui-framework/41249)
