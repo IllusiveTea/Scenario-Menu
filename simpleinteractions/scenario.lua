@@ -4,9 +4,10 @@ local looped2 = 16
 Citizen.CreateThread(function()
     local checkbox2 = false
     WarMenu.CreateMenu('list', "Simple Interactions")
-    WarMenu.SetSubTitle('list', 'Simple Interactions V1.5')
+    WarMenu.SetSubTitle('list', 'Simple Interactions V1.6')
     WarMenu.CreateSubMenu('anims', 'list', 'Animations')
     WarMenu.CreateSubMenu('gesture', 'anims', 'Gestures')
+    WarMenu.CreateSubMenu('misc2', 'anims', 'Misc')
     WarMenu.CreateSubMenu('scens', 'list', 'Scenarios')
     WarMenu.CreateSubMenu('job', 'scens', 'Jobs')
     WarMenu.CreateSubMenu('hobby', 'scens', 'Hobbies')
@@ -22,12 +23,12 @@ Citizen.CreateThread(function()
 
     while true do
 
-        local ped = GetPlayerPed(-1)
+        local ped = PlayerPedId()
 
         if checkbox then
             looped = 1
         else
-            looped = 16
+            looped = 32
         end
 
         if checkbox2 then
@@ -56,6 +57,7 @@ Citizen.CreateThread(function()
             elseif WarMenu.Button('~r~~h~Stop Animation') then
                 ClearPedTasksImmediately(ped)
             elseif WarMenu.MenuButton('Gestures', 'gesture') then
+            elseif WarMenu.MenuButton('Misc', 'misc2') then
             end
 
             WarMenu.Display()
@@ -68,6 +70,22 @@ Citizen.CreateThread(function()
             end
             for theId,theItems in pairs(anims) do
                 if theItems.category == "Gesture" then
+                    if WarMenu.Button(theItems.label) then
+                        TaskPlayAnim(ped, theItems.dic, theItems.anim, 8.0, -1, -1, looped, 1, 0, 0, 0)
+                    end
+                end
+            end
+
+            WarMenu.Display()
+        elseif WarMenu.IsMenuOpened('misc2') then
+            if WarMenu.CheckBox('Loop Animations', checkbox, function(checked)
+                    checkbox = checked
+                end) then
+            elseif WarMenu.Button('~r~~h~Stop Animation') then
+                ClearPedTasksImmediately(ped)
+            end
+            for theId,theItems in pairs(anims) do
+                if theItems.category == "Misc" then
                     if WarMenu.Button(theItems.label) then
                         TaskPlayAnim(ped, theItems.dic, theItems.anim, 8.0, -1, -1, looped, 1, 0, 0, 0)
                     end
@@ -190,7 +208,7 @@ Citizen.CreateThread(function()
             if WarMenu.Button('Warmenu Base By:~h~ Warxander') then
                 TriggerEvent("chatMessage", "IllusiveTea", {255, 0, 0}, "Warmenu Is Amazing!")
             elseif WarMenu.Button('Menu By:~h~ IllusiveTea') then
-            elseif WarMenu.Button('~h~~r~Final Update (Most Likely)') then
+            elseif WarMenu.Button("~h~~r~It's Back And Better!") then
             end
 
             WarMenu.Display()
@@ -201,3 +219,4 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
     end
 end)
+

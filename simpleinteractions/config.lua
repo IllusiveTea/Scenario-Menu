@@ -19,8 +19,22 @@ anims = {
     {dic = "gestures@f@standing@casual", anim = "gesture_why", label = "Why", category = "Gesture"},
     {dic = "gestures@f@standing@casual", anim = "gesture_you_hard", label = "You", category = "Gesture"},
     {dic = "gestures@f@standing@casual", anim = "getsure_its_mine", label = "It's Mine", category = "Gesture"},
+    {dic = "mp_safehouse", anim = "lap_dance_girl", label = "Lap Dance", category = "Misc"},
+    {dic = "misscarstealfinalecar_5_ig_3", anim = "crouchloop", label = "Crouch Hide", category = "Misc"},
+    {dic = "missexile1_cargoplane", anim = "call_radio_player2", label = "Sit And Talk On Radio", category = "Misc"},
+    {dic = "missfam4leadinoutmcs2", anim = "tracy_loop", label = "Kneel On Ground Upset", category = "Misc"},
+    {dic = "missfam5_blackout", anim = "pass_out", label = "Pass Out", category = "Misc"},
+    {dic = "missfam5_blackout", anim = "vomit", label = "Vomit", category = "Misc"},
+    {dic = "missfam5_yoga", anim = "f_yogapose_a", label = "Yoga Pose", category = "Misc"},
+    {dic = "missfbi3_party_c", anim = "marijuana_loop_a_male1", label = "Smoke Weed", category = "Misc"},
+    {dic = "anim@amb@business@coc@coc_packing_hi@", anim = "full_cycle_v1_pressoperator", label = "Operate Press", category = "Misc"},
+    {dic = "missfbi5ig_21", anim = "hand_up_scientist", label = "Scienist Hands Up", category = "Misc"},
+    {dic = "missfbi5ig_21", anim = "holdup_hallway_saw_player_scientist", label = "Scared", category = "Misc"},
+    {dic = "missfbi5ig_36", anim = "_reaction_to_heli", label = "See Heli", category = "Misc"},
+    {dic = "missheist_agency3aig_24", anim = "agent01_conversation", label = "Conversation", category = "Misc"},
+    {dic = "missheist_agency3astumble_getup", anim = "stumble_getup", label = "Stumble Get Up", category = "Misc"},
 }
---{dic = "", anim = "", label = "", category = ""},
+--{dic = "", anim = "", label = "", category = "Misc"},
 
 -- {scen = "", label = "", category = ""},
 scens = {

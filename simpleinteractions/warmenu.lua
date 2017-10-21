@@ -103,13 +103,13 @@ local function drawRect(x, y, width, height, color)
     DrawRect(x, y, width, height, color.r, color.g, color.b, color.a)
 end
 
-
 local function drawTitle()
     if menus[currentMenu] then
+        RequestStreamedTextureDict("commonmenu")
         local x = menus[currentMenu].x + menuWidth / 2
         local y = menus[currentMenu].y + titleHeight / 2
 
-        drawRect(x, y, menuWidth, titleHeight, menus[currentMenu].titleBackgroundColor)
+        DrawSprite("commonmenu", "interaction_bgd", x, y, menuWidth, titleHeight, 0.0, 255, 255, 255, 255)
         drawText(menus[currentMenu].title, x, y - titleHeight / 2 + titleYOffset, menus[currentMenu].titleFont, menus[currentMenu].titleColor, titleScale, true)
     end
 end
@@ -184,21 +184,20 @@ function WarMenu.CreateMenu(id, title)
 
     menus[id].aboutToBeClosed = false
 
-    -- Top left corner
-    menus[id].x = 0.7550
-	menus[id].y = 0.100
+    menus[id].x = 0.759
+	menus[id].y = 0.015
 
     menus[id].currentOption = 1
     menus[id].maxOptionCount = 15
 
     menus[id].titleFont = 1
-    menus[id].titleColor = { r = 0, g = 0, b = 0, a = 255 }
+    menus[id].titleColor = { r = 250, g = 250, b = 250, a = 255 }
     menus[id].titleBackgroundColor = { r = 0, g = 133, b = 199, a = 255 }
 
     menus[id].menuTextColor = { r = 255, g = 255, b = 255, a = 255 }
-    menus[id].menuSubTextColor = { r = 189, g = 189, b = 189, a = 255 }
+    menus[id].menuSubTextColor = { r = 255, g = 255, b = 255, a = 255 }
     menus[id].menuFocusTextColor = { r = 0, g = 0, b = 0, a = 255 }
-    menus[id].menuFocusBackgroundColor = { r = 0, g = 133, b = 199, a = 255 }
+    menus[id].menuFocusBackgroundColor = { r = 255, g = 255, b = 255, a = 255 }
     menus[id].menuBackgroundColor = { r = 0, g = 0, b = 0, a = 160 }
 
     menus[id].subTitleBackgroundColor = { r = menus[id].menuBackgroundColor.r, g = menus[id].menuBackgroundColor.g, b = menus[id].menuBackgroundColor.b, a = 255 }
