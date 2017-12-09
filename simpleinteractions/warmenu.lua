@@ -5,7 +5,9 @@ WarMenu = { }
 -- Options
 WarMenu.debug = false
 
-
+Citizen.CreateThread(function()
+    buttons = setupScaleform("instructional_buttons")
+end)
 
 -- Local variables
 local menus = { }
@@ -109,6 +111,7 @@ local function drawTitle()
         local x = menus[currentMenu].x + menuWidth / 2
         local y = menus[currentMenu].y + titleHeight / 2
 
+        DrawScaleformMovieFullscreen(buttons, 255, 255, 255, 255)
         DrawSprite("commonmenu", "interaction_bgd", x, y, menuWidth, titleHeight, 0.0, 255, 255, 255, 255)
         drawText(menus[currentMenu].title, x, y - titleHeight / 2 + titleYOffset, menus[currentMenu].titleFont, menus[currentMenu].titleColor, titleScale, true)
     end
@@ -337,9 +340,9 @@ end
 
 
 function WarMenu.CheckBox(text, bool, callback)
-    local checked = 'Off'
+    local checked = '~r~Off'
     if bool then
-        checked = 'On'
+        checked = '~g~On'
     end
 
     if WarMenu.Button(text, checked) then
@@ -354,9 +357,9 @@ function WarMenu.CheckBox(text, bool, callback)
 end
 
 function WarMenu.CheckBox2(text, bool, callback)
-    local checked2 = 'Off'
+    local checked2 = '~r~Off'
     if bool then
-        checked2 = 'On'
+        checked2 = '~g~On'
     end
 
     if WarMenu.Button(text, checked2) then
@@ -471,8 +474,8 @@ end
 function WarMenu.SetTitleColor(id, r, g, b, a)
     setMenuProperty(id, 'titleColor', { ['r'] = r, ['g'] = g, ['b'] = b, ['a'] = a or menus[id].titleColor.a })
 end
- 
- 
+
+
 function WarMenu.SetTitleBackgroundColor(id, r, g, b, a)
     setMenuProperty(id, 'titleBackgroundColor', { ['r'] = r, ['g'] = g, ['b'] = b, ['a'] = a or menus[id].titleBackgroundColor.a })
 end
@@ -503,4 +506,51 @@ end
 
 function WarMenu.SetMenuButtonPressedSound(id, name, set)
     setMenuProperty(id, 'buttonPressedSound', { ['name'] = name, ['set'] = set })
+end
+
+function ButtonMessage(text)
+    BeginTextCommandScaleformString("STRING")
+    AddTextComponentScaleform(text)
+    EndTextCommandScaleformString()
+end
+
+function Button(ControlButton)
+    N_0xe83a3e3557a56640(ControlButton)
+end
+
+function setupScaleform(scaleform)
+    local scaleform = RequestScaleformMovie(scaleform)
+    while not HasScaleformMovieLoaded(scaleform) do
+        Citizen.Wait(0)
+    end
+    PushScaleformMovieFunction(scaleform, "CLEAR_ALL")
+    PopScaleformMovieFunctionVoid()
+
+    PushScaleformMovieFunction(scaleform, "SET_CLEAR_SPACE")
+    PushScaleformMovieFunctionParameterInt(200)
+    PopScaleformMovieFunctionVoid()
+
+    PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
+    PushScaleformMovieFunctionParameterInt(0)
+    Button(GetControlInstructionalButton(2, 191, true))
+    ButtonMessage("Select")
+    PopScaleformMovieFunctionVoid()
+
+    PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
+    PushScaleformMovieFunctionParameterInt(1)
+    Button(GetControlInstructionalButton(2, 194, true))
+    ButtonMessage("Back")
+    PopScaleformMovieFunctionVoid()
+
+    PushScaleformMovieFunction(scaleform, "DRAW_INSTRUCTIONAL_BUTTONS")
+    PopScaleformMovieFunctionVoid()
+
+    PushScaleformMovieFunction(scaleform, "SET_BACKGROUND_COLOUR")
+    PushScaleformMovieFunctionParameterInt(0)
+    PushScaleformMovieFunctionParameterInt(0)
+    PushScaleformMovieFunctionParameterInt(0)
+    PushScaleformMovieFunctionParameterInt(80)
+    PopScaleformMovieFunctionVoid()
+
+    return scaleform
 end

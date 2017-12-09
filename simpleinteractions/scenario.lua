@@ -21,7 +21,6 @@ Citizen.CreateThread(function()
         RequestAnimDict(theItems.dic)
     end
 
-    Buttons = setupScaleform("instructional_buttons")
 
     while true do
 
@@ -40,7 +39,7 @@ Citizen.CreateThread(function()
         end
 
         if WarMenu.IsMenuOpened('list') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.MenuButton('Animations', 'anims') then
             end
 
@@ -52,7 +51,6 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('anims') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
             if WarMenu.CheckBox('Loop Animations', checkbox, function(checked)
                     checkbox = checked
                 end) then
@@ -64,7 +62,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('gesture') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox('Loop Animations', checkbox, function(checked)
                     checkbox = checked
                 end) then
@@ -81,7 +79,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('misc2') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox('Loop Animations', checkbox, function(checked)
                     checkbox = checked
                 end) then
@@ -98,7 +96,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('scens') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -114,7 +112,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('job') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -131,7 +129,7 @@ Citizen.CreateThread(function()
 
         WarMenu.Display()
         elseif WarMenu.IsMenuOpened('hobby') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -148,7 +146,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('drink') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -165,7 +163,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('ems') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -182,7 +180,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('sat') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -199,7 +197,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('misc') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.CheckBox2('Loop Scenarios', checkbox2, function(checked2)
                     checkbox2 = checked2
                 end) then
@@ -216,7 +214,7 @@ Citizen.CreateThread(function()
 
             WarMenu.Display()
         elseif WarMenu.IsMenuOpened('creds') then
-            DrawScaleformMovieFullscreen(Buttons, 255, 255, 255, 255, 0)
+
             if WarMenu.Button('Warmenu Base By:~h~ Warxander') then
                 TriggerEvent("chatMessage", "IllusiveTea", {255, 0, 0}, "Neat easter egg! :D")
             elseif WarMenu.Button('Menu By:~h~ IllusiveTea') then
@@ -230,62 +228,3 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
     end
 end)
-
-function ButtonMessage(text)
-    BeginTextCommandScaleformString("STRING")
-    AddTextComponentScaleform(text)
-    EndTextCommandScaleformString()
-end
-
-function Button(ControlButton)
-    N_0xe83a3e3557a56640(ControlButton)
-end
-
-function setupScaleform(scaleform)
-    local scaleform = RequestScaleformMovie(scaleform)
-    while not HasScaleformMovieLoaded(scaleform) do
-        Citizen.Wait(0)
-    end
-    PushScaleformMovieFunction(scaleform, "CLEAR_ALL")
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "SET_CLEAR_SPACE")
-    PushScaleformMovieFunctionParameterInt(200)
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
-    PushScaleformMovieFunctionParameterInt(0)
-    Button(GetControlInstructionalButton(2, 191, true))
-    ButtonMessage("Select")
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
-    PushScaleformMovieFunctionParameterInt(1)
-    Button(GetControlInstructionalButton(2, 194, true))
-    ButtonMessage("Back")
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
-    PushScaleformMovieFunctionParameterInt(2)
-    Button(GetControlInstructionalButton(2, 172, true))
-    ButtonMessage("Up")
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
-    PushScaleformMovieFunctionParameterInt(3)
-    Button(GetControlInstructionalButton(2, 173, true))
-    ButtonMessage("Down")
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "DRAW_INSTRUCTIONAL_BUTTONS")
-    PopScaleformMovieFunctionVoid()
-
-    PushScaleformMovieFunction(scaleform, "SET_BACKGROUND_COLOUR")
-    PushScaleformMovieFunctionParameterInt(0)
-    PushScaleformMovieFunctionParameterInt(0)
-    PushScaleformMovieFunctionParameterInt(0)
-    PushScaleformMovieFunctionParameterInt(80)
-    PopScaleformMovieFunctionVoid()
-
-    return scaleform
-end
