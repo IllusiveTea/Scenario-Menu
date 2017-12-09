@@ -1,4 +1,4 @@
-## Update V1.6: Added more animations (Now 31)!
+## Update V1.7: Added more animations (Now 31)!
 
 
 ### • Built off of @Warxander's [WarMenu GUI Framework](https://forum.fivem.net/t/release-0-9-7-warmenu-lua-gui-framework/41249)
