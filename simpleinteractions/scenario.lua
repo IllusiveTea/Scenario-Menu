@@ -55,7 +55,7 @@ Citizen.CreateThread(function()
                     checkbox = checked
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Animation') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             elseif WarMenu.MenuButton('Gestures', 'gesture') then
             elseif WarMenu.MenuButton('Misc', 'misc2') then
             end
@@ -67,7 +67,7 @@ Citizen.CreateThread(function()
                     checkbox = checked
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Animation') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(anims) do
                 if theItems.category == "Gesture" then
@@ -84,7 +84,7 @@ Citizen.CreateThread(function()
                     checkbox = checked
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Animation') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(anims) do
                 if theItems.category == "Misc" then
@@ -101,7 +101,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             elseif WarMenu.MenuButton('Jobs', 'job') then
             elseif WarMenu.MenuButton('Hobbies', 'hobby') then
             elseif WarMenu.MenuButton('Drinks + Drugs', 'drink') then
@@ -117,7 +117,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "Jobs" then
@@ -134,7 +134,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "Hobby" then
@@ -151,7 +151,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "Drink" then
@@ -168,7 +168,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "EMS" then
@@ -185,7 +185,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "Sat" then
@@ -202,7 +202,7 @@ Citizen.CreateThread(function()
                     checkbox2 = checked2
                 end) then
             elseif WarMenu.Button('~r~~h~Stop Scenario') then
-                ClearPedTasksImmediately(ped)
+                ClearPedTasks(ped)
             end
             for theId,theItems in pairs(scens) do
                 if theItems.category == "Misc" then
