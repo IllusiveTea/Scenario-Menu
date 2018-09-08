@@ -33,6 +33,10 @@ Citizen.CreateThread(function()
             PlayingAnim = false
         end
             
+        if not IsPedActiveInScenario(ped) and PlayingAnim then
+            PlayingAnim = false
+        end
+            
         if checkbox then
             looped = 1
         else
