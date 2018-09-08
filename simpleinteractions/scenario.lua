@@ -25,6 +25,10 @@ Citizen.CreateThread(function()
     while true do
 
         local ped = PlayerPedId()
+            
+        if IsControlPressed(0, 32) or IsControlPressed(0, 33) or IsControlPressed(0, 34) or IsControlPressed(0, 35) and IsPedActiveInScenario(ped) then
+            ClearPedTasks(ped)
+        end
 
         if checkbox then
             looped = 1
