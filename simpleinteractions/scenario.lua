@@ -1,6 +1,13 @@
 local looped = 8
 local looped2 = 16
 
+local scenarioPlaying = IsPedActiveInScenario(GetPlayerPed(-1)) -- Registering whether or not the player is in an active scenario
+
+function cancelScenario() -- Cancels the scenario or animation slowly
+    ClearPedTasks(GetPlayerPed(-1))
+    scenarioPlaying = false
+end
+
 Citizen.CreateThread(function()
     local checkbox2 = false
     WarMenu.CreateMenu('list', "Simple Interactions")
@@ -26,6 +33,10 @@ Citizen.CreateThread(function()
 
         local ped = PlayerPedId()
 
+        if (IsControlPressed(0, 32) or IsControlPressed(0, 33) or IsControlPressed(0, 34) or IsControlPressed(0, 35)) and scenarioPlaying == true then
+            cancelScenario() -- Cancels the scenario or animation if the player is moving
+        end
+            
         if checkbox then
             looped = 1
         else
@@ -73,6 +84,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Gesture" then
                     if WarMenu.Button(theItems.label) then
                         TaskPlayAnim(ped, theItems.dic, theItems.anim, 8.0, -1, -1, looped, 1, 0, 0, 0)
+                        scenarioPlaying = true
                     end
                 end
             end
@@ -90,6 +102,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Misc" then
                     if WarMenu.Button(theItems.label) then
                         TaskPlayAnim(ped, theItems.dic, theItems.anim, 8.0, -1, -1, looped, 1, 0, 0, 0)
+                        scenarioPlaying = true
                     end
                 end
             end
@@ -123,6 +136,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Jobs" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    scenarioPlaying = true
                     end
                 end
             end
@@ -140,6 +154,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Hobby" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    scenarioPlaying = true
                     end
                 end
             end
@@ -157,6 +172,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Drink" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    scenarioPlaying = true
                     end
                 end
             end
@@ -174,6 +190,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "EMS" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    scenarioPlaying = true
                     end
                 end
             end
@@ -191,6 +208,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Sat" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    scenarioPlaying = true
                     end
                 end
             end
@@ -208,6 +226,7 @@ Citizen.CreateThread(function()
                 if theItems.category == "Misc" then
                     if WarMenu.Button(theItems.label) then
                     TaskStartScenarioInPlace(ped, theItems.scen, looped2, true)
+                    scenarioPlaying = true
                     end
                 end
             end
