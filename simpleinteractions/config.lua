@@ -1,4 +1,4 @@
-
+control_key = 1
 
 anims = {
     {dic = "gestures@f@standing@casual", anim = "gesture_bring_it_on", label = "Bring It On", category = "Gesture"},
