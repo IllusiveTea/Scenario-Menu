@@ -240,7 +240,7 @@ Citizen.CreateThread(function()
             end
 
             WarMenu.Display()
-        elseif IsControlJustReleased(0, 167) then --f6
+        elseif IsControlJustReleased(0, control_key) then --f6
             WarMenu.OpenMenu('list')
         end
 
